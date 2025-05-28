@@ -62,3 +62,4 @@ fetch('data/parcelas.geojson')
       }
     }).addTo(map);
   });
+
