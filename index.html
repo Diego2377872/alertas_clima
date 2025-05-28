@@ -1,14 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <meta charset="utf-8">
-  <title>Mapa de Alertas por Humedad</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌦️ Alertas Climáticas para Cultivos</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
   <link rel="stylesheet" href="style.css"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background: #00796b;
+      color: white;
+      padding: 1.5em 1em;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    header p {
+      margin: 0.5em 0 0;
+      font-size: 1em;
+    }
+
+    #weather-info {
+      background-color: #004d40;
+      padding: 0.5em;
+      margin-top: 0.5em;
+      border-radius: 5px;
+      display: inline-block;
+      font-size: 0.95em;
+      color: #fff176;
+    }
+
+    #map {
+      width: 100%;
+      height: calc(100vh - 150px);
+    }
+
+    footer {
+      background: #004d40;
+      color: white;
+      text-align: center;
+      padding: 0.8em;
+      font-size: 0.8em;
+    }
+  </style>
 </head>
 <body>
-  <h2>Alertas por Humedad Relativa ≥ 80%</h2>
-  <div id="map"></div>
+  <header>
+    <h1>🌾 Mapa de Alertas Climáticas</h1>
+    <p>Parcelas resaltadas en <strong>rojo</strong> tienen alta probabilidad de humedad ≥ 80% en los próximos 3 días.</p>
+    <div id="weather-info">Cargando condiciones actuales...</div>
+  </header>
+
+  <main>
+    <div id="map"></div>
+  </main>
+
+  <footer>
+    &copy; 2025 Sistema de Alertas Agroclimáticas · Datos por <a href="https://open-meteo.com/" style="color:#fff176;" target="_blank">Open-Meteo</a>
+  </footer>
 
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script src="script.js"></script>
